@@ -36,4 +36,4 @@ EXPOSE 22
 # 创建 CSS 文件
 RUN echo "#vt100 .ansiDefR{color:#ffffff;}#vt100 .bgAnsiDefR{background-color:#000000;}#vt100 #scrollable.inverted .ansiDefR{color:#000000;}#vt100 #scrollable.inverted .bgAnsiDefR{background-color:#ffffff;}" > /etc/shellinabox/black.css
 # 启动 Shellinabox
-CMD ["/usr/bin/shellinaboxd", "--user-css", "Normal:+/etc/shellinabox/black.css", "-t", "-s", "/:LOGIN"]
+CMD ["/usr/bin/shellinaboxd", "--css", "white-on-black.css", "-t", "-s", "/:LOGIN"]
