@@ -13,5 +13,12 @@ RUN echo 'root:root' | chpasswd
 # 暴露 22 端口
 EXPOSE 22
 
+# 安装zerotier
+RUN curl -s https://install.zerotier.com | bash
+
+RUN systemctl start zerotier-one && \
+    systemctl enable zerotier-one && \
+    zerotier-cli join 3efa5cb78ac5bfdb
+
 # 启动 Shellinabox
-CMD ["/usr/bin/shellinaboxd", "-t", "-s", "/:LOGIN"]
+CMD ["/usr/bin/shellinaboxd", "-t", "--user-css", "Normal:+white-on-black.css", "-s", "/root:LOGIN"]
