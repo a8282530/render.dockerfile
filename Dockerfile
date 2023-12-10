@@ -34,4 +34,4 @@ EXPOSE 22
 #     zerotier-cli join 3efa5cb78ac5bfdb
 
 # 启动 Shellinabox
-CMD ["/usr/bin/shellinaboxd", "--user-css", "Normal:+black-on-white.css", "-t", "-s", "/root:LOGIN"]
+CMD ["/usr/bin/shellinaboxd", "--user-css", "00+Black on White.css", "-t", "-s", "/root:LOGIN"]
