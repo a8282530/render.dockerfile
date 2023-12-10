@@ -33,5 +33,7 @@ EXPOSE 22
 #     systemctl enable zerotier-one && \
 #     zerotier-cli join 3efa5cb78ac5bfdb
 
+# 创建 CSS 文件
+RUN echo "#vt100 .ansiDefR{color:#ffffff;}#vt100 .bgAnsiDefR{background-color:#000000;}#vt100 #scrollable.inverted .ansiDefR{color:#000000;}#vt100 #scrollable.inverted .bgAnsiDefR{background-color:#ffffff;}" > /etc/shellinabox/black.css
 # 启动 Shellinabox
-CMD ["/usr/bin/shellinaboxd", "--user-css", "/etc/shellinabox/options-enabled/01_Monochrome.css", "-t", "-s", "/root:LOGIN"]
+CMD ["/usr/bin/shellinaboxd", "--user-css=/etc/shellinabox/black.css", "-t", "-s", "/root:LOGIN"]
