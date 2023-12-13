@@ -1,0 +1,14 @@
+services:
+  twingate_connector:
+    container_name: twingate-render
+    restart: always
+    image: "twingate/connector:latest"
+    environment:
+      - SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+      - TWINGATE_API_ENDPOINT=/connector.stock
+      - TWINGATE_NETWORK=danas
+      - TWINGATE_ACCESS_TOKEN=eyJhbGciOiJFUzI1NiIsImtpZCI6IkZOMU5NQVZUTUpaNVN0cUFMdDNRUklXbUstMXVjUzNhb2tqaHJMS21WY3MiLCJ0eXAiOiJEQVQifQ.eyJudCI6IkFOIiwiYWlkIjoiMTk5NzcyIiwiZGlkIjoiMTExNTYyOCIsImp0aSI6IjIzNzQ3Njc3LTY4MjctNDk1My1iYmU4LTA3MDQwN2FhZjcwZSIsImlzcyI6InR3aW5nYXRlIiwiYXVkIjoiZGFuYXMiLCJleHAiOjE3MDI0NTgwMzAsImlhdCI6MTcwMjQ1NDQzMCwidmVyIjoiNCIsInRpZCI6IjY1MjExIiwicm53IjoxNzAyNDU0NzMwLCJybmV0aWQiOiI4MTY4OCJ9.KZu60KoOElEmk2inHZBRMWBFXvLzHrWzHDRsFKPld1I4epglwpj9G89cMYxQpj2rZaOIFGsRVujcflZYn-wBVw
+      - TWINGATE_REFRESH_TOKEN=KZGwCrZDsvA_vdazUVwoV9Ca-PQae1h_CX4HHp3r_kcFE8_zRGljlQ7qZmQK7h_Sm2lgZ2YlZmP1pJSpKJSWd11JegaoC-kP3I0VLpnKol03M21UI_KSlDke3OUz4MkPpMrNlw
+      - TWINGATE_LOG_LEVEL=3
+    # sysctls:
+    #   net.ipv4.ping_group_range: "0 2147483647"
